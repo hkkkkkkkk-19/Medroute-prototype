@@ -45,3 +45,4 @@ npm run dev
 ```
 
 The app will start locally for development.
+You can also access the live prototype here : https://medroute-prototype-ezqe.vercel.app/ 
