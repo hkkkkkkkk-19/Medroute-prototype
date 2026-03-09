@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+:root {
+  --background: #030a1a;
+  --foreground: #f8fafc;
+}
+
+body { 
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: auto;
+    letter-spacing: -0.015em;
+    line-height: 1.6;
+    background-color: var(--background);
+    background-image: radial-gradient(circle at top center, #0a1b3d 0%, #030a1a 100%);
+    background-attachment: fixed;
+    color: var(--foreground);
+}
+
+h1, h2, h3, h4, .font-black {
+    font-family: var(--font-sans) !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1.1 !important;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#map { height: 100%; width: 100%; border-radius: 24px; }
+
+@keyframes scan {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scanner-line {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #38bdf8, transparent);
+  box-shadow: 0 0 25px #38bdf8;
+  animation: scan 2.5s ease-in-out infinite;
+  z-index: 20;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Leaflet Tooltip Styling */
+.leaflet-tooltip.route-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
+  display: none !important;
+}
+
+.dark-popup .leaflet-popup-content-wrapper {
+  background: #0f172a !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-popup .leaflet-popup-tip {
+  background: #0f172a !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
